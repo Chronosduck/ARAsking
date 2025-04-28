@@ -13,7 +13,7 @@ struct ARAskingApp: App {
     var body: some Scene {
         WindowGroup {
             if onboarded {
-                ThreadsViewModel() //หลังจากล็อคอินเสร็จจะไปยังหน้านั้นตลอดไป
+                ARMainView() //หลังจากล็อคอินเสร็จจะไปยังหน้านั้นตลอดไป
             } else {
                 OnboardView() //หลังจากล็อคแินแต่ไม่สำเร็จ
             }

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SubLibraryView: View {
     
-    
+    @State private var showQuiz1: Bool = false
+    @State private var showQuiz2: Bool = false
+
     
     var body: some View {
         HStack{
@@ -22,7 +24,7 @@ struct SubLibraryView: View {
         ScrollView {
                 ZStack {
                     Rectangle()
-                        .frame(width: 350, height: 600)
+                        .frame(width: 350, height: 620)
                         .cornerRadius(20)
                         .foregroundStyle(Color.gray.opacity(0.3))
                         .padding(.top, 50)
@@ -44,13 +46,35 @@ struct SubLibraryView: View {
                             .font(.system(size: 18, weight: .bold, design: .default))
                             .foregroundColor(.black.opacity(0.8))
                             .frame(width: 300, height: 180)
-                        Button(action: {}) {
-                            Text("                                                  Read more...")
-                                .fontWeight(.bold)
-                                .foregroundStyle(Color.blue)
+                        HStack{
+                            Button(action: {
+                                    showQuiz1.toggle()
+                                }) {
+                                    Image(systemName: "graduationcap")
+                                        .font(.title2)
+                                        .foregroundColor(.purple)
+                                }
+                                .sheet(isPresented: $showQuiz1) {
+                                    QuizView1()
+                                        .presentationBackground(.ultraThinMaterial)
+                                        .presentationDetents([ .large])
+                                }
+                                .ignoresSafeArea()
+                            
+                            Spacer()
+                                .frame(width: 150)
+                            Button(action: {}) {
+                                Text("Read more...")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color.blue)
+                            }
+                            
                         }
+                        .padding(.top)
                     }
                     .padding(.top, 40)
+                    
+                    
                 }
             
             ZStack {
@@ -77,13 +101,35 @@ struct SubLibraryView: View {
                         .font(.system(size: 18, weight: .bold, design: .default))
                         .foregroundColor(.black.opacity(0.8))
                         .frame(width: 300, height: 180)
-                    Button(action: {}) {
-                        Text("                                                  Read more...")
-                            .fontWeight(.bold)
-                            .foregroundStyle(Color.blue)
+                    HStack{
+                        Button(action: {
+                                showQuiz2.toggle()
+                            }) {
+                                Image(systemName: "graduationcap")
+                                    .font(.title2)
+                                    .foregroundColor(.purple)
+                            }
+                            .sheet(isPresented: $showQuiz2) {
+                                QuizView2()
+                                    .presentationBackground(.ultraThinMaterial)
+                                    .presentationDetents([ .large])
+                            }
+                            .ignoresSafeArea()
+                        
+                        Spacer()
+                            .frame(width: 150)
+                        Button(action: {}) {
+                            Text("Read more...")
+                                .fontWeight(.bold)
+                                .foregroundStyle(Color.blue)
+                        }
+                        
                     }
+                    .padding(.top)
                 }
                 .padding(.top, 40)
+                
+                
             }
             }
         .scrollIndicators(.hidden)
