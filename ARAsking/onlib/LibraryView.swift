@@ -10,28 +10,28 @@ import SwiftUI
 struct LibraryView: View {
     var body: some View {
         
-//        VStack {
-//            HStack{
-//                Button {
-//                    
-//                } label: {
-//                    Image(systemName: "chevron.left")
-//                        .font(.system(size: 50))
-//                        .padding(.leading, 20)
-//                }
-//                Spacer()
-//
-//                Text("Library")
-//                    .font(.largeTitle)
-//                    .fontWeight(.bold)
-//                    .padding(.trailing, 50)
-//                    
-//                Spacer()
-//                    
-//            }
-//            .padding(.bottom, 20)
-//        }
-//        .background(.ultraThinMaterial)
+        VStack {
+            HStack{
+                Button {
+                    
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 50))
+                        .padding(.leading, 20)
+                }
+                Spacer()
+
+                Text("Library")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.trailing, 50)
+                    
+                Spacer()
+                    
+            }
+            .padding(.bottom, 20)
+        }
+        .background(.ultraThinMaterial)
         ScrollView {
             VStack {
                 
@@ -128,7 +128,7 @@ struct LibraryView: View {
                         Spacer()
 
                     }
-                    .navigationTitle("Library")
+//                    .navigationTitle("Library")
                     
                     
                 }

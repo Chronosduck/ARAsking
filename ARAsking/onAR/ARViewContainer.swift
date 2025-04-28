@@ -86,9 +86,7 @@ struct ARViewContainer: UIViewRepresentable {
             }
         }
         
-        // MARK: - Gesture Handlers
         
-        // Spin rotation (Y-axis only)
         @objc func handleRotate(_ gesture: UIRotationGestureRecognizer) {
             guard let entity = currentEntity, gesture.state == .changed else { return }
             
